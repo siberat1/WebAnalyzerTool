@@ -15,14 +15,14 @@
 
 ## Features / *Özellikler*
 
-- **Feature 1:** Description of the feature.  
+- **Feature 1:** Asenkron tarama (aiohttp)  
   *Özellik 1: Özelliğin açıklaması.*
-- **Feature 2:** Another cool thing it does.  
+- **Feature 2:** Otomatik CSRF, XSS, SQLi, File Upload, JS analizleri  
   *Özellik 2: Yaptığı başka bir harika şey.*
-- **Feature 3:** One more for good measure.  
+- **Feature 3:** Gelişmiş form ve parametre analiz motoru  
   *Özellik 3: Ve bir tane daha.*
-- Add more as they develop.  
-  *Geliştikçe daha fazla ekleyin.*
+- **Feature 4:**
+  -  Güzel HTML raporlama (jinja2 destekli)
 
 ---
 

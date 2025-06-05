@@ -1,16 +1,17 @@
 **Proje ve Hedefler ve Ozellikler:** 
 
 
-
-Bu proje, bir bilgisayar ağındaki yazılımcıları, ağ trafiği analiz aracı olan Wireshark kullanarak tespit etmeyi amaçlamaktadır. Temel hedef, yazılımcıların karakteristik ağ aktivitelerini (örneğin, Git/SSH kullanımı, IDE'ler ve kod editörlerinden kaynaklanan trafik, geliştirme/test sunucularına erişim, API test araçları trafiği, sanal makine/konteyner etkileşimleri ve özel port/protokol kullanımları) analiz ederek ayırt edici dijital izlerini belirlemektir. Proje kapsamında, bu özel trafik desenlerini etkin bir şekilde saptamak ve diğer ağ trafiğinden ayrıştırmak amacıyla hem canlı veri yakalama aşamasında (capture filters) hem de yakalanmış verilerin incelenmesi sırasında (display filters) kullanılacak kapsamlı ve özelleştirilmiş Wireshark filtreleri oluşturulacaktır. Bu filtreler, yazılımcılara özgü uygulamaların, servislerin ve davranış kalıplarının tespiti üzerine yoğunlaşarak, ağ üzerindeki yazılımcı varlığını ve faaliyetlerini yüksek doğrulukla belirlemeyi hedeflemektedir.
-
+WebAnalyzerTool, modern web uygulamalarında sıkça karşılaşılan güvenlik açıklarını otomatik olarak tespit etmek üzere geliştirilmiş gelişmiş bir tarama ve analiz aracıdır. Araç; XSS (Cross-Site Scripting), SQL Injection, CSRF, güvensiz header yapılandırmaları, JavaScript kaynaklı güvenlik riskleri ve dosya yükleme açıklıkları gibi birçok zafiyeti tarayabilir. Asenkron yapı kullanılarak yüksek performanslı tarama yapılırken, bulunan zafiyetler JSON ve HTML raporu olarak çıktı verilir. Otomatik oturum açma desteği ve özelleştirilebilir payload dosyaları sayesinde test süreci maksimum esneklikle yürütülür.
 
 
-**Görev:** 2025 yılı için [Developer Hunter, 'wireshark kullanarak yazilimcilari agda tesbit etmek (Yazilimci Avi)'] alanındaki en son ve en etkili ilk 10 tekniği/trendi derinlemesine araştır ve belirle.
+
+**Görev:** 2025 yılı için [Web Analizi] alanındaki en son ve en etkili ilk 10 tekniği/trendi derinlemesine araştır ve belirle.
 
 
 
 **Ozellikler** 
+
+
 
 
 
@@ -42,9 +43,9 @@ Bu proje, bir bilgisayar ağındaki yazılımcıları, ağ trafiği analiz arac�
 
 - Yazılım Geliştirme Metodolojileri
 
-- Veri Bilimi ve Makine Öğrenimi Uygulamaları
+- SQL İnjection Korunma Yöntemleri
 
-- Blokzincir Teknolojileri
+- XSS Atakları
 
 - Dijital Pazarlama Stratejileri
 

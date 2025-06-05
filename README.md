@@ -15,21 +15,26 @@
 
 ## Features / *Özellikler*
 
-- **Feature 1:** Asenkron tarama (aiohttp)  
+- **Feature 1:** Otomatikleştirilmiş form, URL, path ve JavaScript tabanlı parametre testleri
   *Özellik 1: Özelliğin açıklaması.*
 - **Feature 2:** Otomatik CSRF, XSS, SQLi, File Upload, JS analizleri  
   *Özellik 2: Yaptığı başka bir harika şey.*
 - **Feature 3:** Gelişmiş form ve parametre analiz motoru  
   *Özellik 3: Ve bir tane daha.*
-- **Feature 4:** HTML raporlama (jinja2 destekli)
-  
+- **Feature 4:** Güvensiz HTTP header konfigürasyonlarının raporlanması
+- **Feature 5:** Gelişmiş XSS ve SQL Injection payload analizi
+- **Feature 6:** Özelleştirilebilir payload desteği ile kapsamlı tarama yapılmas
+- **Feature 7:** Otomatik giriş mekanizması ile oturumlu sayfaların test edilebilmesi
+- **Feature 8:** Web uygulamalarındaki temel güvenlik açıklarının tespiti
+- **Feature 9:** Güvenlik farkındalığı ve hızlı güvenlik testi süreçlerine katkı sağlama
+- **Feature 10:** HTML ve JSON formatlarında raporlama
 
 ---
 
 ## Team / *Ekip*
 
 - ** Member** - Name Surname: *Role or Contribution*  
-  *Berat Nurlu*
+   *Berat Nurlu*
 
 ---
 

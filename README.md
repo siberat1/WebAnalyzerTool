@@ -21,8 +21,8 @@
   *Özellik 2: Yaptığı başka bir harika şey.*
 - **Feature 3:** Gelişmiş form ve parametre analiz motoru  
   *Özellik 3: Ve bir tane daha.*
-- **Feature 4:**
-  -  Güzel HTML raporlama (jinja2 destekli)
+- **Feature 4:** HTML raporlama (jinja2 destekli)
+  
 
 ---
 

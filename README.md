@@ -7,11 +7,9 @@
   <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square" alt="Contributions">
 </div>
 
-# Project Name
-*Proje Adı*
-
-A brief, engaging description of your project.  
-*Projenizin kısa ve ilgi çekici bir açıklaması.*
+# WebAnalyzerTool
+ 
+*WebAnalyzerTool, modern web uygulamalarında sıkça karşılaşılan güvenlik açıklarını otomatik olarak tespit etmek üzere geliştirilmiş gelişmiş bir tarama ve analiz aracıdır. Araç; XSS (Cross-Site Scripting), SQL Injection, CSRF, güvensiz header yapılandırmaları, JavaScript kaynaklı güvenlik riskleri ve dosya yükleme açıklıkları gibi birçok zafiyeti tarayabilir. Asenkron yapı kullanılarak yüksek performanslı tarama yapılırken, bulunan zafiyetler JSON ve HTML raporu olarak çıktı verilir. Otomatik oturum açma desteği ve özelleştirilebilir payload dosyaları sayesinde test süreci maksimum esneklikle yürütülür.*
 
 ---
 
